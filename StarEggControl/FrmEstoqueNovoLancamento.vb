@@ -4,11 +4,13 @@
 
     Private Sub FrmEstoqueNovoLancamento_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         AtualizarListaProdutos(CmbProduto)
+        AtualizarQuantidadeEstoque()
 
         'Limpar Campos
         TxtPrecoTotal.Clear()
         TxtPrecoUnid.Clear()
-        TxtQuantidade.Value = 1
+        TxtQuantidade.Value = 0
+        CmbTipo.Text = "Entrada"
 
     End Sub
 
@@ -33,4 +35,11 @@
         End If
     End Sub
 
+    Private Sub CmbProduto_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbProduto.SelectedIndexChanged
+        AtualizarQuantidadeEstoque()
+    End Sub
+
+    Private Sub CmbTipo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbTipo.SelectedIndexChanged
+        AtualizarQuantidadeEstoque()
+    End Sub
 End Class

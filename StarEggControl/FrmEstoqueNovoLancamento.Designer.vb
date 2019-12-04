@@ -35,7 +35,7 @@ Partial Class FrmEstoqueNovoLancamento
         Me.TxtPrecoUnid = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.BtnLancar = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TxtEstoque = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         CType(Me.TxtQuantidade, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -63,11 +63,9 @@ Partial Class FrmEstoqueNovoLancamento
         '
         Me.TxtQuantidade.Location = New System.Drawing.Point(86, 69)
         Me.TxtQuantidade.Maximum = New Decimal(New Integer() {99999, 0, 0, 0})
-        Me.TxtQuantidade.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.TxtQuantidade.Name = "TxtQuantidade"
         Me.TxtQuantidade.Size = New System.Drawing.Size(76, 20)
         Me.TxtQuantidade.TabIndex = 27
-        Me.TxtQuantidade.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'Label2
         '
@@ -127,6 +125,7 @@ Partial Class FrmEstoqueNovoLancamento
         Me.TxtPrecoTotal.ReadOnly = True
         Me.TxtPrecoTotal.Size = New System.Drawing.Size(94, 20)
         Me.TxtPrecoTotal.TabIndex = 33
+        Me.TxtPrecoTotal.Text = "0,00"
         '
         'TxtPrecoUnid
         '
@@ -135,6 +134,7 @@ Partial Class FrmEstoqueNovoLancamento
         Me.TxtPrecoUnid.Name = "TxtPrecoUnid"
         Me.TxtPrecoUnid.Size = New System.Drawing.Size(71, 20)
         Me.TxtPrecoUnid.TabIndex = 32
+        Me.TxtPrecoUnid.Text = "0,00"
         '
         'Label4
         '
@@ -155,14 +155,15 @@ Partial Class FrmEstoqueNovoLancamento
         Me.BtnLancar.Text = "Lancar"
         Me.BtnLancar.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'TxtEstoque
         '
-        Me.TextBox1.BackColor = System.Drawing.Color.White
-        Me.TextBox1.Location = New System.Drawing.Point(235, 69)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.ReadOnly = True
-        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox1.TabIndex = 36
+        Me.TxtEstoque.BackColor = System.Drawing.Color.White
+        Me.TxtEstoque.Location = New System.Drawing.Point(235, 69)
+        Me.TxtEstoque.Name = "TxtEstoque"
+        Me.TxtEstoque.ReadOnly = True
+        Me.TxtEstoque.Size = New System.Drawing.Size(100, 20)
+        Me.TxtEstoque.TabIndex = 36
+        Me.TxtEstoque.Text = "0"
         '
         'Label7
         '
@@ -178,7 +179,7 @@ Partial Class FrmEstoqueNovoLancamento
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(342, 183)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.TxtEstoque)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.BtnLancar)
         Me.Controls.Add(Me.GroupBox1)
@@ -214,6 +215,6 @@ Partial Class FrmEstoqueNovoLancamento
     Friend WithEvents TxtPrecoTotal As TextBox
     Friend WithEvents TxtPrecoUnid As TextBox
     Friend WithEvents BtnLancar As Button
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TxtEstoque As TextBox
     Friend WithEvents Label7 As Label
 End Class

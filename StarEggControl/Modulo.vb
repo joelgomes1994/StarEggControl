@@ -87,7 +87,6 @@
     Sub RealizarLancamento(Lancamento As Array)
 
         Try
-
             Sql = "insert into lancamentos (Produto, Quantidade, Preco, Data, Tipo, Usuario) values " & vbNewLine _
                 & "(" & Lancamento.GetValue(0) & "," & Lancamento.GetValue(1) & "," & Lancamento.GetValue(2) & ",NOW(),'" & Lancamento.GetValue(3) & "', " & UsuarioId & ")"
             Rs = Db.Execute(Sql)
@@ -95,11 +94,39 @@
             MsgBox("Lancamento Realizado Com Sucesso!")
 
         Catch ex As Exception
-
             Console.WriteLine(ex)
-
         End Try
+    End Sub
 
+    Sub AtualizarQuantidadeEstoque()
+        With FrmEstoqueNovoLancamento
+            Try
+                Dim IdProduto As Integer
+                Sql = "select id from produtos where nome='" & .CmbProduto.Text & "'"
+                Rs = Db.Execute(Sql)
+
+                If Not Rs.EOF Then
+                    IdProduto = Rs.Fields(0).Value
+                End If
+
+                Sql = "select sum(e.quantidade) - sum(s.quantidade) from lancamentos e " &
+                    "inner join (select * from lancamentos where tipo='Saída' and produto=" & IdProduto & ") s " &
+                    "on e.id <> s.id where e.tipo = 'Entrada' and  e.produto=" & IdProduto
+                Rs = Db.Execute(Sql)
+
+                If Not Rs.EOF Then
+                    If Not IsDBNull(Rs.Fields(0).Value) Then
+                        .TxtEstoque.Text = Rs.Fields(0).Value
+                        .TxtQuantidade.Maximum = IIf(.CmbTipo.Text = "Saída", Rs.Fields(0).Value, 99999)
+                    Else
+                        .TxtEstoque.Text = 0
+                        .TxtQuantidade.Maximum = IIf(.CmbTipo.Text = "Saída", 0, 99999)
+                    End If
+                End If
+            Catch ex As Exception
+
+            End Try
+        End With
     End Sub
 
 End Module
