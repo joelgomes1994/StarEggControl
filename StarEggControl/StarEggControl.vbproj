@@ -76,6 +76,12 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormRelatorio.Designer.vb">
+      <DependentUpon>FormRelatorio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormRelatorio.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FrmEstoqueNovoLancamento.Designer.vb">
       <DependentUpon>FrmEstoqueNovoLancamento.vb</DependentUpon>
     </Compile>
@@ -125,6 +131,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FormRelatorio.resx">
+      <DependentUpon>FormRelatorio.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmEstoqueNovoLancamento.resx">
       <DependentUpon>FrmEstoqueNovoLancamento.vb</DependentUpon>
     </EmbeddedResource>

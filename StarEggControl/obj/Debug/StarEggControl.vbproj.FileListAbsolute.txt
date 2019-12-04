@@ -33,3 +33,22 @@ C:\Users\Caue Fernando\Downloads\drive-download-20191203T120054Z-001\StarEggCont
 C:\Users\Caue Fernando\Downloads\drive-download-20191203T120054Z-001\StarEggControl\obj\Debug\StarEggControl.exe
 C:\Users\Caue Fernando\Downloads\drive-download-20191203T120054Z-001\StarEggControl\obj\Debug\StarEggControl.xml
 C:\Users\Caue Fernando\Downloads\drive-download-20191203T120054Z-001\StarEggControl\obj\Debug\StarEggControl.pdb
+D:\FATEC\INTERDISCIPLINAR\StarEggControl\StarEggControl\bin\Debug\StarEggControl.exe.config
+D:\FATEC\INTERDISCIPLINAR\StarEggControl\StarEggControl\bin\Debug\StarEggControl.exe
+D:\FATEC\INTERDISCIPLINAR\StarEggControl\StarEggControl\bin\Debug\StarEggControl.pdb
+D:\FATEC\INTERDISCIPLINAR\StarEggControl\StarEggControl\bin\Debug\StarEggControl.xml
+D:\FATEC\INTERDISCIPLINAR\StarEggControl\StarEggControl\obj\Debug\StarEggControl.vbprojAssemblyReference.cache
+D:\FATEC\INTERDISCIPLINAR\StarEggControl\StarEggControl\obj\Debug\Interop.ADODB.dll
+D:\FATEC\INTERDISCIPLINAR\StarEggControl\StarEggControl\obj\Debug\StarEggControl.vbproj.ResolveComReference.cache
+D:\FATEC\INTERDISCIPLINAR\StarEggControl\StarEggControl\obj\Debug\StarEggControl.FrmEstoqueNovoLancamento.resources
+D:\FATEC\INTERDISCIPLINAR\StarEggControl\StarEggControl\obj\Debug\StarEggControl.FrmEstoqueProduto.resources
+D:\FATEC\INTERDISCIPLINAR\StarEggControl\StarEggControl\obj\Debug\StarEggControl.FrmPrincipal.resources
+D:\FATEC\INTERDISCIPLINAR\StarEggControl\StarEggControl\obj\Debug\StarEggControl.FrmUsuarioDados.resources
+D:\FATEC\INTERDISCIPLINAR\StarEggControl\StarEggControl\obj\Debug\StarEggControl.FrmUsuarioEntrar.resources
+D:\FATEC\INTERDISCIPLINAR\StarEggControl\StarEggControl\obj\Debug\StarEggControl.Resources.resources
+D:\FATEC\INTERDISCIPLINAR\StarEggControl\StarEggControl\obj\Debug\StarEggControl.vbproj.GenerateResource.cache
+D:\FATEC\INTERDISCIPLINAR\StarEggControl\StarEggControl\obj\Debug\StarEggControl.vbproj.CoreCompileInputs.cache
+D:\FATEC\INTERDISCIPLINAR\StarEggControl\StarEggControl\obj\Debug\StarEggControl.exe
+D:\FATEC\INTERDISCIPLINAR\StarEggControl\StarEggControl\obj\Debug\StarEggControl.xml
+D:\FATEC\INTERDISCIPLINAR\StarEggControl\StarEggControl\obj\Debug\StarEggControl.pdb
+D:\FATEC\INTERDISCIPLINAR\StarEggControl\StarEggControl\obj\Debug\StarEggControl.FormRelatorio.resources

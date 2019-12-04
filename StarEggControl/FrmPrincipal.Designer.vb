@@ -55,38 +55,38 @@ Partial Class FrmPrincipal
         '
         Me.UsuárioToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EntrarToolStripMenuItem, Me.DadosDoUsuárioToolStripMenuItem, Me.EncerrarSessãoToolStripMenuItem, Me.ToolStripSeparator1, Me.SairToolStripMenuItem})
         Me.UsuárioToolStripMenuItem.Name = "UsuárioToolStripMenuItem"
-        Me.UsuárioToolStripMenuItem.Size = New System.Drawing.Size(63, 20)
+        Me.UsuárioToolStripMenuItem.Size = New System.Drawing.Size(59, 20)
         Me.UsuárioToolStripMenuItem.Text = "Usuário"
         '
         'EntrarToolStripMenuItem
         '
         Me.EntrarToolStripMenuItem.Name = "EntrarToolStripMenuItem"
-        Me.EntrarToolStripMenuItem.Size = New System.Drawing.Size(175, 22)
+        Me.EntrarToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
         Me.EntrarToolStripMenuItem.Text = "Entrar"
         '
         'DadosDoUsuárioToolStripMenuItem
         '
         Me.DadosDoUsuárioToolStripMenuItem.Enabled = False
         Me.DadosDoUsuárioToolStripMenuItem.Name = "DadosDoUsuárioToolStripMenuItem"
-        Me.DadosDoUsuárioToolStripMenuItem.Size = New System.Drawing.Size(175, 22)
+        Me.DadosDoUsuárioToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
         Me.DadosDoUsuárioToolStripMenuItem.Text = "Dados do usuário"
         '
         'EncerrarSessãoToolStripMenuItem
         '
         Me.EncerrarSessãoToolStripMenuItem.Enabled = False
         Me.EncerrarSessãoToolStripMenuItem.Name = "EncerrarSessãoToolStripMenuItem"
-        Me.EncerrarSessãoToolStripMenuItem.Size = New System.Drawing.Size(175, 22)
+        Me.EncerrarSessãoToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
         Me.EncerrarSessãoToolStripMenuItem.Text = "Encerrar sessão"
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(172, 6)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(163, 6)
         '
         'SairToolStripMenuItem
         '
         Me.SairToolStripMenuItem.Name = "SairToolStripMenuItem"
-        Me.SairToolStripMenuItem.Size = New System.Drawing.Size(175, 22)
+        Me.SairToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
         Me.SairToolStripMenuItem.Text = "Sair"
         '
         'EstoqueToolStripMenuItem
@@ -94,19 +94,19 @@ Partial Class FrmPrincipal
         Me.EstoqueToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NovoLancamentoToolStripMenuItem, Me.ProdutosToolStripMenuItem})
         Me.EstoqueToolStripMenuItem.Enabled = False
         Me.EstoqueToolStripMenuItem.Name = "EstoqueToolStripMenuItem"
-        Me.EstoqueToolStripMenuItem.Size = New System.Drawing.Size(65, 20)
+        Me.EstoqueToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
         Me.EstoqueToolStripMenuItem.Text = "Estoque"
         '
         'NovoLancamentoToolStripMenuItem
         '
         Me.NovoLancamentoToolStripMenuItem.Name = "NovoLancamentoToolStripMenuItem"
-        Me.NovoLancamentoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.NovoLancamentoToolStripMenuItem.Size = New System.Drawing.Size(169, 22)
         Me.NovoLancamentoToolStripMenuItem.Text = "Novo lançamento"
         '
         'ProdutosToolStripMenuItem
         '
         Me.ProdutosToolStripMenuItem.Name = "ProdutosToolStripMenuItem"
-        Me.ProdutosToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ProdutosToolStripMenuItem.Size = New System.Drawing.Size(169, 22)
         Me.ProdutosToolStripMenuItem.Text = "Produtos"
         '
         'RelatóriosToolStripMenuItem
@@ -114,38 +114,38 @@ Partial Class FrmPrincipal
         Me.RelatóriosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PEPSToolStripMenuItem, Me.UEPSToolStripMenuItem, Me.MédiaPonderadaToolStripMenuItem})
         Me.RelatóriosToolStripMenuItem.Enabled = False
         Me.RelatóriosToolStripMenuItem.Name = "RelatóriosToolStripMenuItem"
-        Me.RelatóriosToolStripMenuItem.Size = New System.Drawing.Size(77, 20)
+        Me.RelatóriosToolStripMenuItem.Size = New System.Drawing.Size(71, 20)
         Me.RelatóriosToolStripMenuItem.Text = "Relatórios"
         '
         'PEPSToolStripMenuItem
         '
         Me.PEPSToolStripMenuItem.Name = "PEPSToolStripMenuItem"
-        Me.PEPSToolStripMenuItem.Size = New System.Drawing.Size(175, 22)
+        Me.PEPSToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.PEPSToolStripMenuItem.Text = "PEPS"
         '
         'UEPSToolStripMenuItem
         '
         Me.UEPSToolStripMenuItem.Name = "UEPSToolStripMenuItem"
-        Me.UEPSToolStripMenuItem.Size = New System.Drawing.Size(175, 22)
+        Me.UEPSToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.UEPSToolStripMenuItem.Text = "UEPS"
         '
         'MédiaPonderadaToolStripMenuItem
         '
         Me.MédiaPonderadaToolStripMenuItem.Name = "MédiaPonderadaToolStripMenuItem"
-        Me.MédiaPonderadaToolStripMenuItem.Size = New System.Drawing.Size(175, 22)
+        Me.MédiaPonderadaToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.MédiaPonderadaToolStripMenuItem.Text = "Média ponderada"
         '
         'SobreToolStripMenuItem
         '
         Me.SobreToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SobreToolStripMenuItem1})
         Me.SobreToolStripMenuItem.Name = "SobreToolStripMenuItem"
-        Me.SobreToolStripMenuItem.Size = New System.Drawing.Size(53, 20)
+        Me.SobreToolStripMenuItem.Size = New System.Drawing.Size(50, 20)
         Me.SobreToolStripMenuItem.Text = "Ajuda"
         '
         'SobreToolStripMenuItem1
         '
         Me.SobreToolStripMenuItem1.Name = "SobreToolStripMenuItem1"
-        Me.SobreToolStripMenuItem1.Size = New System.Drawing.Size(110, 22)
+        Me.SobreToolStripMenuItem1.Size = New System.Drawing.Size(104, 22)
         Me.SobreToolStripMenuItem1.Text = "Sobre"
         '
         'FrmPrincipal
