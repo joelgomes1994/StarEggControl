@@ -29,7 +29,8 @@
     Private Sub BtnLancar_Click(sender As Object, e As EventArgs) Handles BtnLancar.Click
         If (TxtPrecoTotal.Text <> "") And (CmbProduto.Text <> "") And (CmbTipo.Text <> "") Then
             RealizarLancamento({(CmbProduto.SelectedIndex + 1), TxtQuantidade.Text, TxtPrecoUnid.Text.Replace(",", "."), CmbTipo.Text})
-            Close()
+            TxtPrecoUnid.Text = ""
+            TxtPrecoTotal.Text = ""
         Else
             MsgBox("Preencha todos os campos!")
         End If

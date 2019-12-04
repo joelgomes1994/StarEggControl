@@ -85,13 +85,13 @@
     End Sub
 
     Sub RealizarLancamento(Lancamento As Array)
-
         Try
             Sql = "insert into lancamentos (Produto, Quantidade, Preco, Data, Tipo, Usuario) values " & vbNewLine _
                 & "(" & Lancamento.GetValue(0) & "," & Lancamento.GetValue(1) & "," & Lancamento.GetValue(2) & ",NOW(),'" & Lancamento.GetValue(3) & "', " & UsuarioId & ")"
             Rs = Db.Execute(Sql)
 
             MsgBox("Lancamento Realizado Com Sucesso!")
+            AtualizarQuantidadeEstoque()
 
         Catch ex As Exception
             Console.WriteLine(ex)
@@ -109,9 +109,9 @@
                     IdProduto = Rs.Fields(0).Value
                 End If
 
-                Sql = "select sum(e.quantidade) - sum(s.quantidade) from lancamentos e " &
-                    "inner join (select * from lancamentos where tipo='Saída' and produto=" & IdProduto & ") s " &
-                    "on e.id <> s.id where e.tipo = 'Entrada' and  e.produto=" & IdProduto
+                Sql = "select sum(r.quantidade) from " &
+                      "(select iif(l.tipo='Saída', l.quantidade * -1, l.quantidade) as quantidade from lancamentos l " &
+                      "where l.produto=" & IdProduto & ") r"
                 Rs = Db.Execute(Sql)
 
                 If Not Rs.EOF Then
