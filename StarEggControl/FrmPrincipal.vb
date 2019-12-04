@@ -35,18 +35,22 @@
         FrmEstoqueNovoLancamento.ShowDialog()
     End Sub
 
-    Private Sub PEPSToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PEPSToolStripMenuItem.Click
+    Private Sub PEPSToolStripMenuItem_Click(sender As Object, e As EventArgs)
         FormRelatorio.SetRelatorio(0)
         FormRelatorio.Show()
     End Sub
 
-    Private Sub UEPSToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UEPSToolStripMenuItem.Click
+    Private Sub UEPSToolStripMenuItem_Click(sender As Object, e As EventArgs)
         FormRelatorio.SetRelatorio(1)
         FormRelatorio.Show()
     End Sub
 
-    Private Sub MédiaPonderadaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MédiaPonderadaToolStripMenuItem.Click
+    Private Sub MédiaPonderadaToolStripMenuItem_Click(sender As Object, e As EventArgs)
         FormRelatorio.SetRelatorio(2)
         FormRelatorio.Show()
+    End Sub
+
+    Private Sub RelatóriosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RelatóriosToolStripMenuItem.Click
+        FormRelatorio.ShowDialog()
     End Sub
 End Class
