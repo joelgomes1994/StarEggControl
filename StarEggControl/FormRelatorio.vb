@@ -4,7 +4,7 @@
         Try
             Dim TotalQtdeEnt, TotalValorEnt, TotalQtdeSaida, TotalValorSaida, TotalQtdeSaldo, TotalValorSaldo As Double
             Dim LinhasLotes As New Collection
-            Dim LoteAtual As Integer
+            Dim LoteAtual, LinhaAtual As Integer
 
             Sql = "SELECT l.data, l.tipo, p.nome, " &
                 "IIf(l.tipo='Entrada',l.quantidade,'') AS qtdEnt, IIf(l.tipo='Entrada',l.preco,'') AS precoUnitEnt, IIf(l.tipo='Entrada',l.quantidade*l.preco,'') AS valorEnt, " &
@@ -25,7 +25,7 @@
 
             ' Adicionar linha com os dados do banco
             Do While Not Rs.EOF
-                DgRelatorio.Rows.Add(
+                LinhaAtual = DgRelatorio.Rows.Add(
                     Rs.Fields(0).Value,
                     Rs.Fields(1).Value,
                     Rs.Fields(2).Value,
@@ -36,6 +36,9 @@
                     Rs.Fields(7).Value,
                     Rs.Fields(8).Value
                     )
+                If Rs.Fields(1).Value = "Entrada" Then
+                    LoteAtual = LinhaAtual
+                End If
 
                 ' Alterar cor de fundo da linha de acordo com tipo Entrada/Saída
                 With DgRelatorio.Rows(DgRelatorio.Rows.Count - 1).DefaultCellStyle
@@ -81,24 +84,37 @@
                     ' Realizar os cálculos para PEPS
                 ElseIf CmbTipoRelatorio.Text = "PEPS" Then
 
-                    If DgRelatorio.Rows.Count > 1 Then
+                    If DgRelatorio.Rows(LinhaAtual).Cells(1).Value = "Entrada" Then
 
-                        For Cont As Integer = 0 To DgRelatorio.Rows.Count Step 1
-                            If DgRelatorio.Rows(Cont).Cells(1).Value = "Entrada" And DgRelatorio.Rows(Cont).Cells(9).Value <> "0" Then
-                                LoteAtual = DgRelatorio.Rows.Add(
-                                    "", "Lote", DgRelatorio.Rows(Cont).Cells(2).Value, "", "", "", "", "", "",
-                                    DgRelatorio.Rows(Cont).Cells(9).Value,
-                                    DgRelatorio.Rows(Cont).Cells(10).Value,
-                                    DgRelatorio.Rows(Cont).Cells(11).Value
-                                    )
-                                DgRelatorio.Rows(LoteAtual).DefaultCellStyle.BackColor = Color.LightGray
-                            End If
-                        Next
+                        With DgRelatorio.Rows(DgRelatorio.Rows.Count - 1)
+                            ' Qtde Saldo
+                            .Cells(9).Value =
+                                StrDbl(DgRelatorio.Rows(DgRelatorio.Rows.Count - 2).Cells(9).Value) _
+                                + StrDbl(.Cells(3).Value) _
+                                - StrDbl(.Cells(6).Value)
+
+                            ' Valor Saldo
+                            .Cells(11).Value =
+                                Double.Parse(DgRelatorio.Rows(DgRelatorio.Rows.Count - 2).Cells(11).Value) _
+                                + StrDbl(.Cells(5).Value) _
+                                - StrDbl(.Cells(8).Value)
+
+                            ' Preço Unit Saldo
+                            .Cells(10).Value = Math.Round(
+                                StrDbl(.Cells(11).Value) _
+                                / StrDbl(.Cells(9).Value), 2)
+                        End With
+                    Else
+                        With DgRelatorio.Rows(DgRelatorio.Rows.Count - 1)
+                            For Each Row As DataGridViewRow In DgRelatorio.Rows
+                                If Row.Cells(1).Value = "Entrada" And Row.Cells(0).ToolTipText <> "0" Then
+
+                                End If
+                            Next
+                        End With
                     End If
-
                 End If
-
-                    Rs.MoveNext()
+                Rs.MoveNext()
             Loop
 
             ' Adicionar linha ao final com os totais
@@ -138,6 +154,14 @@
 
     Private Sub CmbProduto_Click(sender As Object, e As EventArgs) Handles CmbProduto.Click
 
+    End Sub
+
+    Private Sub BtnExcel_Click(sender As Object, e As EventArgs) Handles BtnExcel.Click
+        DgRelatorio.SelectAll()
+        My.Computer.Clipboard.SetText(DgRelatorio.GetClipboardContent().GetText())
+        DgRelatorio.ClearSelection()
+        MsgBox("Relatório copiado para a área de transferência!" & vbNewLine &
+               "Cole o conteúdo em uma planilha de Excel.", vbOKOnly + vbInformation, "Relatório exportado")
     End Sub
 
 End Class

@@ -113,7 +113,8 @@ Partial Class FormRelatorio
         Me.BtnExcel.Name = "BtnExcel"
         Me.BtnExcel.Size = New System.Drawing.Size(23, 23)
         Me.BtnExcel.Text = "Excel"
-        Me.BtnExcel.ToolTipText = "Exportar relatório para planilha de Excel"
+        Me.BtnExcel.ToolTipText = "Copiar relatório para a área de transferência, permitindo colar como planilha de " &
+    "Excel."
         '
         'DgRelatorio
         '
