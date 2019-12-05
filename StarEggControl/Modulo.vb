@@ -129,4 +129,12 @@
         End With
     End Sub
 
+    Function StrDbl(ByVal Valor As Object) As Double
+        Try
+            Return Math.Round(Double.Parse(Valor), 2)
+        Catch ex As Exception
+            Return 0.0
+        End Try
+    End Function
+
 End Module

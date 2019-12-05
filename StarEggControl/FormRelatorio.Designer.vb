@@ -24,25 +24,28 @@ Partial Class FormRelatorio
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormRelatorio))
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
+        Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
         Me.CmbTipoRelatorio = New System.Windows.Forms.ToolStripComboBox()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ToolStripLabel2 = New System.Windows.Forms.ToolStripLabel()
         Me.CmbProduto = New System.Windows.Forms.ToolStripComboBox()
+        Me.BtnProdutosTodos = New System.Windows.Forms.ToolStripButton()
         Me.DgRelatorio = New System.Windows.Forms.DataGridView()
         Me.ToolStrip2 = New System.Windows.Forms.ToolStrip()
         Me.RelatorioAtual = New System.Windows.Forms.ToolStripLabel()
-        Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
-        Me.ToolStripLabel2 = New System.Windows.Forms.ToolStripLabel()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.BtnProdutosTodos = New System.Windows.Forms.ToolStripButton()
         Me.Data = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Tipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Quantidade = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PrecoUnit = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PrecoTotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SaldoInicial = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PrecoAquisicao = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Saidas = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SaldoTotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SaldoFinal = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Produto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.QtdeEntrada = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PrecoUnitEnt = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ValorEnt = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.QtdeSaida = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PrecoUnitSaida = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ValorSaida = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.QtdeSaldo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PrecoUnitSaldo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ValorSaldo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BtnExcel = New System.Windows.Forms.ToolStripButton()
         Me.ToolStrip1.SuspendLayout()
         CType(Me.DgRelatorio, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip2.SuspendLayout()
@@ -50,12 +53,18 @@ Partial Class FormRelatorio
         '
         'ToolStrip1
         '
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel1, Me.CmbTipoRelatorio, Me.ToolStripSeparator1, Me.ToolStripLabel2, Me.CmbProduto, Me.BtnProdutosTodos})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel1, Me.CmbTipoRelatorio, Me.ToolStripSeparator1, Me.ToolStripLabel2, Me.CmbProduto, Me.BtnProdutosTodos, Me.BtnExcel})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(800, 25)
+        Me.ToolStrip1.Size = New System.Drawing.Size(819, 25)
         Me.ToolStrip1.TabIndex = 0
         Me.ToolStrip1.Text = "ToolStrip1"
+        '
+        'ToolStripLabel1
+        '
+        Me.ToolStripLabel1.Name = "ToolStripLabel1"
+        Me.ToolStripLabel1.Size = New System.Drawing.Size(33, 22)
+        Me.ToolStripLabel1.Text = "Tipo"
         '
         'CmbTipoRelatorio
         '
@@ -66,17 +75,39 @@ Partial Class FormRelatorio
         Me.CmbTipoRelatorio.Size = New System.Drawing.Size(150, 25)
         Me.CmbTipoRelatorio.ToolTipText = "Método de relatório"
         '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 25)
+        '
+        'ToolStripLabel2
+        '
+        Me.ToolStripLabel2.Name = "ToolStripLabel2"
+        Me.ToolStripLabel2.Size = New System.Drawing.Size(52, 22)
+        Me.ToolStripLabel2.Text = "Produto"
+        '
         'CmbProduto
         '
         Me.CmbProduto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CmbProduto.Name = "CmbProduto"
         Me.CmbProduto.Size = New System.Drawing.Size(150, 25)
         '
+        'BtnProdutosTodos
+        '
+        Me.BtnProdutosTodos.CheckOnClick = True
+        Me.BtnProdutosTodos.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BtnProdutosTodos.Image = CType(resources.GetObject("BtnProdutosTodos.Image"), System.Drawing.Image)
+        Me.BtnProdutosTodos.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.BtnProdutosTodos.Margin = New System.Windows.Forms.Padding(1)
+        Me.BtnProdutosTodos.Name = "BtnProdutosTodos"
+        Me.BtnProdutosTodos.Size = New System.Drawing.Size(23, 23)
+        Me.BtnProdutosTodos.Text = "Todos"
+        Me.BtnProdutosTodos.ToolTipText = "Mostrar relatório para todos os produtos"
+        '
         'DgRelatorio
         '
         Me.DgRelatorio.AllowUserToAddRows = False
         Me.DgRelatorio.AllowUserToDeleteRows = False
-        Me.DgRelatorio.AllowUserToResizeColumns = False
         Me.DgRelatorio.AllowUserToResizeRows = False
         Me.DgRelatorio.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
@@ -84,12 +115,12 @@ Partial Class FormRelatorio
         Me.DgRelatorio.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.DgRelatorio.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText
         Me.DgRelatorio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DgRelatorio.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Data, Me.Tipo, Me.Quantidade, Me.PrecoUnit, Me.PrecoTotal, Me.SaldoInicial, Me.PrecoAquisicao, Me.Saidas, Me.SaldoTotal, Me.SaldoFinal})
+        Me.DgRelatorio.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Data, Me.Tipo, Me.Produto, Me.QtdeEntrada, Me.PrecoUnitEnt, Me.ValorEnt, Me.QtdeSaida, Me.PrecoUnitSaida, Me.ValorSaida, Me.QtdeSaldo, Me.PrecoUnitSaldo, Me.ValorSaldo})
         Me.DgRelatorio.Location = New System.Drawing.Point(0, 28)
         Me.DgRelatorio.Name = "DgRelatorio"
         Me.DgRelatorio.ReadOnly = True
         Me.DgRelatorio.RowHeadersVisible = False
-        Me.DgRelatorio.Size = New System.Drawing.Size(800, 394)
+        Me.DgRelatorio.Size = New System.Drawing.Size(819, 394)
         Me.DgRelatorio.TabIndex = 1
         '
         'ToolStrip2
@@ -98,7 +129,7 @@ Partial Class FormRelatorio
         Me.ToolStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RelatorioAtual})
         Me.ToolStrip2.Location = New System.Drawing.Point(0, 425)
         Me.ToolStrip2.Name = "ToolStrip2"
-        Me.ToolStrip2.Size = New System.Drawing.Size(800, 25)
+        Me.ToolStrip2.Size = New System.Drawing.Size(819, 25)
         Me.ToolStrip2.TabIndex = 2
         Me.ToolStrip2.Text = "ToolStrip2"
         '
@@ -107,35 +138,6 @@ Partial Class FormRelatorio
         Me.RelatorioAtual.Name = "RelatorioAtual"
         Me.RelatorioAtual.Size = New System.Drawing.Size(13, 22)
         Me.RelatorioAtual.Text = "-"
-        '
-        'ToolStripLabel1
-        '
-        Me.ToolStripLabel1.Name = "ToolStripLabel1"
-        Me.ToolStripLabel1.Size = New System.Drawing.Size(33, 22)
-        Me.ToolStripLabel1.Text = "Tipo"
-        '
-        'ToolStripLabel2
-        '
-        Me.ToolStripLabel2.Name = "ToolStripLabel2"
-        Me.ToolStripLabel2.Size = New System.Drawing.Size(52, 22)
-        Me.ToolStripLabel2.Text = "Produto"
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 25)
-        '
-        'BtnProdutosTodos
-        '
-        Me.BtnProdutosTodos.CheckOnClick = True
-        Me.BtnProdutosTodos.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.BtnProdutosTodos.Image = CType(resources.GetObject("BtnProdutosTodos.Image"), System.Drawing.Image)
-        Me.BtnProdutosTodos.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.BtnProdutosTodos.Margin = New System.Windows.Forms.Padding(1)
-        Me.BtnProdutosTodos.Name = "BtnProdutosTodos"
-        Me.BtnProdutosTodos.Size = New System.Drawing.Size(47, 23)
-        Me.BtnProdutosTodos.Text = "Todos"
-        Me.BtnProdutosTodos.ToolTipText = "Mostrar relatório para todos os produtos"
         '
         'Data
         '
@@ -149,60 +151,91 @@ Partial Class FormRelatorio
         Me.Tipo.HeaderText = "Tipo"
         Me.Tipo.Name = "Tipo"
         Me.Tipo.ReadOnly = True
+        Me.Tipo.Width = 80
         '
-        'Quantidade
+        'Produto
         '
-        Me.Quantidade.HeaderText = "Quantidade"
-        Me.Quantidade.Name = "Quantidade"
-        Me.Quantidade.ReadOnly = True
+        Me.Produto.HeaderText = "Produto"
+        Me.Produto.Name = "Produto"
+        Me.Produto.ReadOnly = True
+        Me.Produto.Width = 150
         '
-        'PrecoUnit
+        'QtdeEntrada
         '
-        Me.PrecoUnit.HeaderText = "Preço Unitário"
-        Me.PrecoUnit.Name = "PrecoUnit"
-        Me.PrecoUnit.ReadOnly = True
+        Me.QtdeEntrada.HeaderText = "Qtde Ent"
+        Me.QtdeEntrada.Name = "QtdeEntrada"
+        Me.QtdeEntrada.ReadOnly = True
+        Me.QtdeEntrada.Width = 90
         '
-        'PrecoTotal
+        'PrecoUnitEnt
         '
-        Me.PrecoTotal.HeaderText = "Preço Total"
-        Me.PrecoTotal.Name = "PrecoTotal"
-        Me.PrecoTotal.ReadOnly = True
+        Me.PrecoUnitEnt.HeaderText = "Preço Unit Ent"
+        Me.PrecoUnitEnt.Name = "PrecoUnitEnt"
+        Me.PrecoUnitEnt.ReadOnly = True
+        Me.PrecoUnitEnt.Width = 120
         '
-        'SaldoInicial
+        'ValorEnt
         '
-        Me.SaldoInicial.HeaderText = "Saldo Inicial"
-        Me.SaldoInicial.Name = "SaldoInicial"
-        Me.SaldoInicial.ReadOnly = True
+        Me.ValorEnt.HeaderText = "Valor Ent"
+        Me.ValorEnt.Name = "ValorEnt"
+        Me.ValorEnt.ReadOnly = True
         '
-        'PrecoAquisicao
+        'QtdeSaida
         '
-        Me.PrecoAquisicao.HeaderText = "Preço de Aquisição"
-        Me.PrecoAquisicao.Name = "PrecoAquisicao"
-        Me.PrecoAquisicao.ReadOnly = True
+        Me.QtdeSaida.HeaderText = "Qtde Saida"
+        Me.QtdeSaida.Name = "QtdeSaida"
+        Me.QtdeSaida.ReadOnly = True
+        Me.QtdeSaida.Width = 90
         '
-        'Saidas
+        'PrecoUnitSaida
         '
-        Me.Saidas.HeaderText = "Saídas"
-        Me.Saidas.Name = "Saidas"
-        Me.Saidas.ReadOnly = True
+        Me.PrecoUnitSaida.HeaderText = "Preço Unit Saída"
+        Me.PrecoUnitSaida.Name = "PrecoUnitSaida"
+        Me.PrecoUnitSaida.ReadOnly = True
+        Me.PrecoUnitSaida.Width = 120
         '
-        'SaldoTotal
+        'ValorSaida
         '
-        Me.SaldoTotal.HeaderText = "Saldo Total"
-        Me.SaldoTotal.Name = "SaldoTotal"
-        Me.SaldoTotal.ReadOnly = True
+        Me.ValorSaida.HeaderText = "Valor Saída"
+        Me.ValorSaida.Name = "ValorSaida"
+        Me.ValorSaida.ReadOnly = True
         '
-        'SaldoFinal
+        'QtdeSaldo
         '
-        Me.SaldoFinal.HeaderText = "Saldo Final"
-        Me.SaldoFinal.Name = "SaldoFinal"
-        Me.SaldoFinal.ReadOnly = True
+        Me.QtdeSaldo.HeaderText = "Qtde Saldo"
+        Me.QtdeSaldo.Name = "QtdeSaldo"
+        Me.QtdeSaldo.ReadOnly = True
+        Me.QtdeSaldo.Width = 90
+        '
+        'PrecoUnitSaldo
+        '
+        Me.PrecoUnitSaldo.HeaderText = "Preço Unit Saldo"
+        Me.PrecoUnitSaldo.Name = "PrecoUnitSaldo"
+        Me.PrecoUnitSaldo.ReadOnly = True
+        Me.PrecoUnitSaldo.Width = 120
+        '
+        'ValorSaldo
+        '
+        Me.ValorSaldo.HeaderText = "Valor Saldo"
+        Me.ValorSaldo.Name = "ValorSaldo"
+        Me.ValorSaldo.ReadOnly = True
+        '
+        'BtnExcel
+        '
+        Me.BtnExcel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BtnExcel.Image = CType(resources.GetObject("BtnExcel.Image"), System.Drawing.Image)
+        Me.BtnExcel.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.BtnExcel.Margin = New System.Windows.Forms.Padding(1)
+        Me.BtnExcel.Name = "BtnExcel"
+        Me.BtnExcel.Size = New System.Drawing.Size(23, 23)
+        Me.BtnExcel.Text = "Excel"
+        Me.BtnExcel.ToolTipText = "Exportar relatório para planilha de Excel"
         '
         'FormRelatorio
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(819, 450)
         Me.Controls.Add(Me.ToolStrip2)
         Me.Controls.Add(Me.DgRelatorio)
         Me.Controls.Add(Me.ToolStrip1)
@@ -232,12 +265,15 @@ Partial Class FormRelatorio
     Friend WithEvents BtnProdutosTodos As ToolStripButton
     Friend WithEvents Data As DataGridViewTextBoxColumn
     Friend WithEvents Tipo As DataGridViewTextBoxColumn
-    Friend WithEvents Quantidade As DataGridViewTextBoxColumn
-    Friend WithEvents PrecoUnit As DataGridViewTextBoxColumn
-    Friend WithEvents PrecoTotal As DataGridViewTextBoxColumn
-    Friend WithEvents SaldoInicial As DataGridViewTextBoxColumn
-    Friend WithEvents PrecoAquisicao As DataGridViewTextBoxColumn
-    Friend WithEvents Saidas As DataGridViewTextBoxColumn
-    Friend WithEvents SaldoTotal As DataGridViewTextBoxColumn
-    Friend WithEvents SaldoFinal As DataGridViewTextBoxColumn
+    Friend WithEvents Produto As DataGridViewTextBoxColumn
+    Friend WithEvents QtdeEntrada As DataGridViewTextBoxColumn
+    Friend WithEvents PrecoUnitEnt As DataGridViewTextBoxColumn
+    Friend WithEvents ValorEnt As DataGridViewTextBoxColumn
+    Friend WithEvents QtdeSaida As DataGridViewTextBoxColumn
+    Friend WithEvents PrecoUnitSaida As DataGridViewTextBoxColumn
+    Friend WithEvents ValorSaida As DataGridViewTextBoxColumn
+    Friend WithEvents QtdeSaldo As DataGridViewTextBoxColumn
+    Friend WithEvents PrecoUnitSaldo As DataGridViewTextBoxColumn
+    Friend WithEvents ValorSaldo As DataGridViewTextBoxColumn
+    Friend WithEvents BtnExcel As ToolStripButton
 End Class
