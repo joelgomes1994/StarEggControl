@@ -30,9 +30,8 @@ Partial Class FormRelatorio
         Me.ToolStripLabel2 = New System.Windows.Forms.ToolStripLabel()
         Me.CmbProduto = New System.Windows.Forms.ToolStripComboBox()
         Me.BtnProdutosTodos = New System.Windows.Forms.ToolStripButton()
+        Me.BtnExcel = New System.Windows.Forms.ToolStripButton()
         Me.DgRelatorio = New System.Windows.Forms.DataGridView()
-        Me.ToolStrip2 = New System.Windows.Forms.ToolStrip()
-        Me.RelatorioAtual = New System.Windows.Forms.ToolStripLabel()
         Me.Data = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Tipo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Produto = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -45,7 +44,8 @@ Partial Class FormRelatorio
         Me.QtdeSaldo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PrecoUnitSaldo = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ValorSaldo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.BtnExcel = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStrip2 = New System.Windows.Forms.ToolStrip()
+        Me.RelatorioAtual = New System.Windows.Forms.ToolStripLabel()
         Me.ToolStrip1.SuspendLayout()
         CType(Me.DgRelatorio, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolStrip2.SuspendLayout()
@@ -104,6 +104,17 @@ Partial Class FormRelatorio
         Me.BtnProdutosTodos.Text = "Todos"
         Me.BtnProdutosTodos.ToolTipText = "Mostrar relatório para todos os produtos"
         '
+        'BtnExcel
+        '
+        Me.BtnExcel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BtnExcel.Image = CType(resources.GetObject("BtnExcel.Image"), System.Drawing.Image)
+        Me.BtnExcel.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.BtnExcel.Margin = New System.Windows.Forms.Padding(1)
+        Me.BtnExcel.Name = "BtnExcel"
+        Me.BtnExcel.Size = New System.Drawing.Size(23, 23)
+        Me.BtnExcel.Text = "Excel"
+        Me.BtnExcel.ToolTipText = "Exportar relatório para planilha de Excel"
+        '
         'DgRelatorio
         '
         Me.DgRelatorio.AllowUserToAddRows = False
@@ -122,22 +133,6 @@ Partial Class FormRelatorio
         Me.DgRelatorio.RowHeadersVisible = False
         Me.DgRelatorio.Size = New System.Drawing.Size(819, 394)
         Me.DgRelatorio.TabIndex = 1
-        '
-        'ToolStrip2
-        '
-        Me.ToolStrip2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.ToolStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RelatorioAtual})
-        Me.ToolStrip2.Location = New System.Drawing.Point(0, 425)
-        Me.ToolStrip2.Name = "ToolStrip2"
-        Me.ToolStrip2.Size = New System.Drawing.Size(819, 25)
-        Me.ToolStrip2.TabIndex = 2
-        Me.ToolStrip2.Text = "ToolStrip2"
-        '
-        'RelatorioAtual
-        '
-        Me.RelatorioAtual.Name = "RelatorioAtual"
-        Me.RelatorioAtual.Size = New System.Drawing.Size(13, 22)
-        Me.RelatorioAtual.Text = "-"
         '
         'Data
         '
@@ -220,16 +215,21 @@ Partial Class FormRelatorio
         Me.ValorSaldo.Name = "ValorSaldo"
         Me.ValorSaldo.ReadOnly = True
         '
-        'BtnExcel
+        'ToolStrip2
         '
-        Me.BtnExcel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BtnExcel.Image = CType(resources.GetObject("BtnExcel.Image"), System.Drawing.Image)
-        Me.BtnExcel.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.BtnExcel.Margin = New System.Windows.Forms.Padding(1)
-        Me.BtnExcel.Name = "BtnExcel"
-        Me.BtnExcel.Size = New System.Drawing.Size(23, 23)
-        Me.BtnExcel.Text = "Excel"
-        Me.BtnExcel.ToolTipText = "Exportar relatório para planilha de Excel"
+        Me.ToolStrip2.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.ToolStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RelatorioAtual})
+        Me.ToolStrip2.Location = New System.Drawing.Point(0, 425)
+        Me.ToolStrip2.Name = "ToolStrip2"
+        Me.ToolStrip2.Size = New System.Drawing.Size(819, 25)
+        Me.ToolStrip2.TabIndex = 2
+        Me.ToolStrip2.Text = "ToolStrip2"
+        '
+        'RelatorioAtual
+        '
+        Me.RelatorioAtual.Name = "RelatorioAtual"
+        Me.RelatorioAtual.Size = New System.Drawing.Size(13, 22)
+        Me.RelatorioAtual.Text = "-"
         '
         'FormRelatorio
         '

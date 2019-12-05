@@ -53,3 +53,4 @@ D:\FATEC\INTERDISCIPLINAR\StarEggControl\StarEggControl\obj\Debug\StarEggControl
 D:\FATEC\INTERDISCIPLINAR\StarEggControl\StarEggControl\obj\Debug\StarEggControl.pdb
 D:\FATEC\INTERDISCIPLINAR\StarEggControl\StarEggControl\obj\Debug\StarEggControl.FormRelatorio.resources
 C:\Users\Joel\Google Drive\Fatec\StarEggControl\StarEggControl\obj\Debug\StarEggControl.FormRelatorio.resources
+C:\Users\Joel\Google Drive\Fatec\StarEggControl\StarEggControl\obj\Debug\StarEggControl.FrmUsuarioEsqueceu.resources

@@ -113,6 +113,12 @@
     <Compile Include="FrmUsuarioEntrar.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FrmUsuarioEsqueceu.Designer.vb">
+      <DependentUpon>FrmUsuarioEsqueceu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUsuarioEsqueceu.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Modulo.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -148,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUsuarioEntrar.resx">
       <DependentUpon>FrmUsuarioEntrar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUsuarioEsqueceu.resx">
+      <DependentUpon>FrmUsuarioEsqueceu.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

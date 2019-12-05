@@ -32,4 +32,8 @@
             BtnEntrar.PerformClick()
         End If
     End Sub
+
+    Private Sub BtnEsqueceu_Click(sender As Object, e As EventArgs) Handles BtnEsqueceu.Click
+        FrmUsuarioEsqueceu.ShowDialog()
+    End Sub
 End Class

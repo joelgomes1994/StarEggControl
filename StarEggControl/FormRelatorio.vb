@@ -3,6 +3,8 @@
     Sub PreencherDgRelatorio()
         Try
             Dim TotalQtdeEnt, TotalValorEnt, TotalQtdeSaida, TotalValorSaida, TotalQtdeSaldo, TotalValorSaldo As Double
+            Dim LinhasLotes As New Collection
+            Dim LoteAtual As Integer
 
             Sql = "SELECT l.data, l.tipo, p.nome, " &
                 "IIf(l.tipo='Entrada',l.quantidade,'') AS qtdEnt, IIf(l.tipo='Entrada',l.preco,'') AS precoUnitEnt, IIf(l.tipo='Entrada',l.quantidade*l.preco,'') AS valorEnt, " &
@@ -20,7 +22,6 @@
             DgRelatorio.Rows.Add("", "Saldo Inicial",
                                  IIf(BtnProdutosTodos.Checked, "", CmbProduto.Text),
                                  "", "", "", "", "", "", "0", "0", "0")
-            DgRelatorio.Rows(0).DefaultCellStyle.BackColor = Color.Cyan
 
             ' Adicionar linha com os dados do banco
             Do While Not Rs.EOF
@@ -40,6 +41,7 @@
                 With DgRelatorio.Rows(DgRelatorio.Rows.Count - 1).DefaultCellStyle
                     If Rs.Fields(1).Value = "Entrada" Then
                         .BackColor = Color.PaleGreen
+                        LinhasLotes.Add(DgRelatorio.Rows(DgRelatorio.Rows.Count - 1).Index)
                     Else
                         .BackColor = Color.LightPink
                     End If
@@ -75,18 +77,36 @@
                         TotalValorSaldo = StrDbl(DgRelatorio.Rows(DgRelatorio.Rows.Count - 1).Cells(11).Value)
 
                     End With
+
+                    ' Realizar os cálculos para PEPS
+                ElseIf CmbTipoRelatorio.Text = "PEPS" Then
+
+                    If DgRelatorio.Rows.Count > 1 Then
+
+                        For Cont As Integer = 0 To DgRelatorio.Rows.Count Step 1
+                            If DgRelatorio.Rows(Cont).Cells(1).Value = "Entrada" And DgRelatorio.Rows(Cont).Cells(9).Value <> "0" Then
+                                LoteAtual = DgRelatorio.Rows.Add(
+                                    "", "Lote", DgRelatorio.Rows(Cont).Cells(2).Value, "", "", "", "", "", "",
+                                    DgRelatorio.Rows(Cont).Cells(9).Value,
+                                    DgRelatorio.Rows(Cont).Cells(10).Value,
+                                    DgRelatorio.Rows(Cont).Cells(11).Value
+                                    )
+                                DgRelatorio.Rows(LoteAtual).DefaultCellStyle.BackColor = Color.LightGray
+                            End If
+                        Next
+                    End If
+
                 End If
 
-                Rs.MoveNext()
+                    Rs.MoveNext()
             Loop
 
-            ' Adicionar linha dos totais
+            ' Adicionar linha ao final com os totais
             DgRelatorio.Rows.Add(
                 "", "Totais", "",
                 TotalQtdeEnt, "", TotalValorEnt, TotalQtdeSaida, "", TotalValorSaida,
                 TotalQtdeSaldo, "", TotalValorSaldo
                 )
-            DgRelatorio.Rows(DgRelatorio.Rows.Count - 1).DefaultCellStyle.BackColor = Color.Cyan
 
         Catch ex As Exception
 
