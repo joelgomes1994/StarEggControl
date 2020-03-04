@@ -3,3 +3,5 @@
 *.ini
 /StarEggControl/bin/Debug/*.*
 /StarEggControl/bin/Release/*.*
+/.vs
+/StarEggControl/obj
